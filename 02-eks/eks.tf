@@ -51,3 +51,19 @@ module "eks" {
   }
 
 }
+
+# Define el grupo de seguridad adicional en el node_security_group_additional_rules
+# resource "aws_security_group" "my_additional_sg" {
+#   name        = "my-additional-sg"
+#   description = "My additional security group"
+#   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
+
+#   # Agregar reglas de seguridad necesarias aquí
+#   # Por ejemplo, para permitir tráfico en el puerto 9443
+#   egress {
+#     from_port   = 0
+#     to_port     = 65535
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+# }
